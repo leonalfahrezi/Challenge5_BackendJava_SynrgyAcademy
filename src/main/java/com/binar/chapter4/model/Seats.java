@@ -1,6 +1,8 @@
 package com.binar.chapter4.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
@@ -12,6 +14,8 @@ import javax.persistence.Table;
 @Table(name = "seats")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Seats {
 
     @EmbeddedId
@@ -20,7 +24,13 @@ public class Seats {
 //    @Column(name = "seats_id")
 //    private Integer seatsId;
 
+    @Column(name = "seat_number")
+    private Integer seatNumber;
+
     @Column(name = "studio_name")
-    private Character studioName;
+    private String studioName;
+
+    @Column(name = "status")
+    private String status;
 
 }

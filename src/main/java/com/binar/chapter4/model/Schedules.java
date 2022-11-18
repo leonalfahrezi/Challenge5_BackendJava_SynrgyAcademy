@@ -1,6 +1,8 @@
 package com.binar.chapter4.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -9,16 +11,18 @@ import javax.persistence.*;
 @Table(name = "schedules")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Schedules {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     @Column(name = "schedule_id")
-    private Long scheduleId;
+    private Integer scheduleId;
 
     @Column(name = "film_code")
-    private Long filmCode;
+    private Integer filmCode;
 
     @Column(name = "playing_date")
     private String playingDate;
@@ -30,9 +34,6 @@ public class Schedules {
     private String endingTime;
 
     @Column(name = "ticket_price")
-    private Long ticketPrice;
-
-    @ManyToOne
-    private Films film;
+    private Integer ticketPrice;
 
 }
