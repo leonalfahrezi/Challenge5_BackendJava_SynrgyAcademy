@@ -1,11 +1,11 @@
-package com.binar.chapter4.service;
+package com.binar.chapter5.service;
 
-import com.binar.chapter4.model.Films;
-import com.binar.chapter4.model.Schedules;
-import com.binar.chapter4.model.Seats;
-import com.binar.chapter4.repository.FilmsRepository;
-import com.binar.chapter4.repository.SchedulesRepository;
-import com.binar.chapter4.repository.SeatsRepository;
+import com.binar.chapter5.model.Films;
+import com.binar.chapter5.model.Schedules;
+import com.binar.chapter5.model.Seats;
+import com.binar.chapter5.repository.FilmsRepository;
+import com.binar.chapter5.repository.SchedulesRepository;
+import com.binar.chapter5.repository.SeatsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

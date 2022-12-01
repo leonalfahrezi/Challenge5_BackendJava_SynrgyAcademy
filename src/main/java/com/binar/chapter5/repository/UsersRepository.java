@@ -1,7 +1,6 @@
-package com.binar.chapter4.repository;
+package com.binar.chapter5.repository;
 
-import com.binar.chapter4.model.Films;
-import com.binar.chapter4.model.Users;
+import com.binar.chapter5.model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

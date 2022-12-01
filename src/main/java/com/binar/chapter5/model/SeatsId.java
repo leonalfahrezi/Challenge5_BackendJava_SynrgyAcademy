@@ -1,4 +1,4 @@
-package com.binar.chapter4.model;
+package com.binar.chapter5.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

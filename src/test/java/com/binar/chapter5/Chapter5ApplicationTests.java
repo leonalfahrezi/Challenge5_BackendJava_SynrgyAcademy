@@ -1,10 +1,10 @@
-package com.binar.chapter4;
+package com.binar.chapter5;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Chapter4ApplicationTests {
+class Chapter5ApplicationTests {
 
 	@Test
 	void contextLoads() {

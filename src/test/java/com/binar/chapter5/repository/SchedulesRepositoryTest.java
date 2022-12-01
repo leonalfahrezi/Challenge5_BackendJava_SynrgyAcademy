@@ -1,8 +1,7 @@
-package com.binar.chapter4.repository;
+package com.binar.chapter5.repository;
 
-import com.binar.chapter4.model.Films;
-import com.binar.chapter4.model.Schedules;
-import com.binar.chapter4.service.FilmsServiceImpl;
+import com.binar.chapter5.model.Schedules;
+import com.binar.chapter5.service.FilmsServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

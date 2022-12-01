@@ -1,7 +1,7 @@
-package com.binar.chapter4.service;
+package com.binar.chapter5.service;
 
-import com.binar.chapter4.model.Users;
-import com.binar.chapter4.repository.UsersRepository;
+import com.binar.chapter5.model.Users;
+import com.binar.chapter5.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

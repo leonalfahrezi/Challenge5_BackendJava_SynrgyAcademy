@@ -1,14 +1,13 @@
-package com.binar.chapter4.repository;
+package com.binar.chapter5.repository;
 
-import com.binar.chapter4.model.Users;
-import com.binar.chapter4.service.UsersServiceImpl;
+import com.binar.chapter5.model.Users;
+import com.binar.chapter5.service.UsersServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-import java.util.Optional;
 
 @SpringBootTest
 public class UsersRepositoryTest {

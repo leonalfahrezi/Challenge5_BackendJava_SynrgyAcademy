@@ -1,6 +1,6 @@
-package com.binar.chapter4.service;
+package com.binar.chapter5.service;
 
-import com.binar.chapter4.model.Users;
+import com.binar.chapter5.model.Users;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

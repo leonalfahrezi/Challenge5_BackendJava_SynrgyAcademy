@@ -1,8 +1,8 @@
-package com.binar.chapter4.service;
+package com.binar.chapter5.service;
 
-import com.binar.chapter4.model.Films;
-import com.binar.chapter4.model.Schedules;
-import com.binar.chapter4.model.Seats;
+import com.binar.chapter5.model.Films;
+import com.binar.chapter5.model.Schedules;
+import com.binar.chapter5.model.Seats;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

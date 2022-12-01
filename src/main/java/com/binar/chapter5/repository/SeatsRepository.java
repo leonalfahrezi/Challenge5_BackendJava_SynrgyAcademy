@@ -1,7 +1,7 @@
-package com.binar.chapter4.repository;
+package com.binar.chapter5.repository;
 
-import com.binar.chapter4.model.Seats;
-import com.binar.chapter4.model.SeatsId;
+import com.binar.chapter5.model.Seats;
+import com.binar.chapter5.model.SeatsId;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
