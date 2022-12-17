@@ -19,6 +19,10 @@ public interface SeatsRepository extends JpaRepository<Seats, SeatsId> {
     @Query(value = "CALL UPDATE_STATUS(:seatNumber, :studioName, :statusUpdated)", nativeQuery = true)
     void updateStatus (@Param("seatNumber") String seatNumber, @Param("studioName") String studioName, @Param("statusUpdated") String statusUpdated);
 
+    @Modifying
+    @Query(value = "select seat_number, studio_name from seats", nativeQuery = true)
+    Seats getSeatStudio ();
+
     @Query(value = "select * from seats", nativeQuery = true)
     List<Seats> getStudioSeatStatus();
 }

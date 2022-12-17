@@ -14,11 +14,12 @@ public class UsersRepositoryTest {
 
     @Autowired
     UsersRepository usersRepository;
+    @Autowired
     UsersServiceImpl usersServiceImpl;
 
     @Test
     void getUsersTest() {
-        List<Users> test = usersRepository.getUsers();
+        Users test = usersRepository.getUsers();
         Assertions.assertNotNull(test);
     }
 

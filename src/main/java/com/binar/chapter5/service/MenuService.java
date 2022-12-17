@@ -15,6 +15,7 @@ public class MenuService implements CommandLineRunner {
 
     @Autowired
     FilmsServiceImpl filmsServiceImpl;
+    @Autowired
     UsersServiceImpl usersServiceImpl;
 
     @Override
@@ -75,20 +76,17 @@ public class MenuService implements CommandLineRunner {
     }
 
     public void showFilm() {
-        List<Films> listFilm = filmsServiceImpl.getFilm();
-        for (Films films : listFilm) {
+        Films films = filmsServiceImpl.getFilm();
             System.out.format("%d | %s\n",
                     films.getFilmCode(), films.getFilmName());
         }
-    }
 
     public void showScheduleStudioTicket() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Masukkan kode film : ");
         Integer byCode = scan.nextInt();
-        List<Schedules> listSchedule = filmsServiceImpl.getSchedule(byCode);
+        Schedules schedules = filmsServiceImpl.getScheduleDate();
         List<Seats> listSeat = filmsServiceImpl.getStudioSeatStatus();
-        for (Schedules schedules : listSchedule)
         for (Seats seats : listSeat) {
             System.out.format("%s | %s | %s | %s | Rp.%d\n",
                     schedules.getPlayingDate(), schedules.getStartingTime(), schedules.getEndingTime(), seats.getStudioName(), schedules.getTicketPrice());

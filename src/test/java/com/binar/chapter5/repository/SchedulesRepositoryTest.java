@@ -13,6 +13,7 @@ import java.util.List;
 public class SchedulesRepositoryTest {
     @Autowired
     SchedulesRepository schedulesRepository;
+    @Autowired
     FilmsServiceImpl filmsServiceImpl;
 
     @Test

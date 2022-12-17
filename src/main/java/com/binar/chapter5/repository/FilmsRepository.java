@@ -11,4 +11,7 @@ import java.util.List;
 public interface FilmsRepository extends JpaRepository<Films, String> {
     @Query(value = "select * from films", nativeQuery = true)
     List<Films> getAllFilms();
+
+    @Query(value = "select film_name from films", nativeQuery = true)
+    Films getFilmsByName();
 }

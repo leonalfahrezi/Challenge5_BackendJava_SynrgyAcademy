@@ -3,6 +3,7 @@ package com.binar.chapter5.service;
 import com.binar.chapter5.model.Films;
 import com.binar.chapter5.model.Schedules;
 import com.binar.chapter5.model.Seats;
+import com.binar.chapter5.model.SeatsId;
 import com.binar.chapter5.repository.FilmsRepository;
 import com.binar.chapter5.repository.SchedulesRepository;
 import com.binar.chapter5.repository.SeatsRepository;
@@ -17,7 +18,9 @@ public class FilmsServiceImpl implements FilmsService {
 
     @Autowired
     FilmsRepository filmsRepository;
+    @Autowired
     SchedulesRepository schedulesRepository;
+    @Autowired
     SeatsRepository seatsRepository;
 
     @Override
@@ -27,28 +30,19 @@ public class FilmsServiceImpl implements FilmsService {
         if (filmAdd.isPresent()) {
             System.out.println("Films has been registered before, try another!");
         }
-
         return filmsRepository.save(films);
     }
 
     @Override
-    public void updateFilm(String filmName, Films films, Integer id, Schedules schedules) {
-
+    public void updateFilm(Films films) {
         Optional<Films> filmUpdate = filmsRepository.findById(films.getFilmName());
-        filmUpdate.get().setFilmCode(films.getFilmCode());
-        filmUpdate.get().setFilmName(films.getFilmName());
-        filmUpdate.get().setPlaying(films.isPlaying());
-        filmsRepository.save(films);
-
-        Optional<Schedules> scheduleUpdate = schedulesRepository.findById(schedules.getScheduleId());
-        scheduleUpdate.get().setScheduleId(schedules.getScheduleId());
-        scheduleUpdate.get().setFilmCode(schedules.getFilmCode());
-        scheduleUpdate.get().setPlayingDate(schedules.getPlayingDate());
-        scheduleUpdate.get().setStartingTime(schedules.getStartingTime());
-        scheduleUpdate.get().setEndingTime(schedules.getEndingTime());
-        scheduleUpdate.get().setTicketPrice(schedules.getTicketPrice());
-        schedulesRepository.save(schedules);
-
+        if (!filmUpdate.isPresent()) {
+            filmUpdate.get().setFilmCode(films.getFilmCode());
+            filmUpdate.get().setFilmName(films.getFilmName());
+            filmUpdate.get().setPlaying(films.isPlaying());
+            filmsRepository.save(films);
+        } else
+            System.out.println("Films has been registered before, try another!");
     }
 
     @Override
@@ -61,30 +55,36 @@ public class FilmsServiceImpl implements FilmsService {
             System.out.println("Films has been deleted!");
         }
         return true;
-
     }
 
     @Override
-    public List<Films> getFilm() {
+    public Films getFilm() {
+        return filmsRepository.getFilmsByName();
+    }
 
-        return filmsRepository.getAllFilms();
+
+    @Override
+    public Schedules addSchedule(Schedules schedules) {
+        Optional<Schedules> scheduleAdd = schedulesRepository.findById(schedules.getScheduleId());
+        if (scheduleAdd.isPresent()) {
+            System.out.println("Schedule has been registered before, try another!");
+        }
+        return schedulesRepository.save(schedules);
     }
 
     @Override
-    public List<Schedules> getSchedule(Integer filmCode) {
+    public Schedules getScheduleDate() {
+        return schedulesRepository.getSchedulesDate();
+    }
 
-        List<Schedules> getScheduleByFilmCode = schedulesRepository.getSchedules();
-        return getScheduleByFilmCode;
+    @Override
+    public Seats getSeatStudio() {
+        return seatsRepository.getSeatStudio();
     }
 
     @Override
     public List<Seats> getStudioSeatStatus() {
         return seatsRepository.getStudioSeatStatus();
-    }
-
-    @Override
-    public Seats addSeat(Seats seats) {
-        return seatsRepository.save(seats);
     }
 
     @Override

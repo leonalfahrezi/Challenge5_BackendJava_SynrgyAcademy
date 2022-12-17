@@ -11,4 +11,7 @@ import java.util.List;
 public interface SchedulesRepository extends JpaRepository<Schedules, Integer> {
     @Query(value = "select * from schedules", nativeQuery = true)
     List<Schedules> getSchedules();
+
+    @Query(value = "select playing_ from schedules", nativeQuery = true)
+    Schedules getSchedulesDate();
 }

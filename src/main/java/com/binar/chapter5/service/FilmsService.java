@@ -3,6 +3,7 @@ package com.binar.chapter5.service;
 import com.binar.chapter5.model.Films;
 import com.binar.chapter5.model.Schedules;
 import com.binar.chapter5.model.Seats;
+import com.binar.chapter5.model.SeatsId;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,17 +13,19 @@ public interface FilmsService {
 
     Films addFilm (Films films);
 
-    void updateFilm (String filmName, Films films, Integer id, Schedules schedules);
+    void updateFilm (Films films);
 
     boolean deleteFilm (String filmName);
 
-    List<Films> getFilm();
+    Films getFilm();
 
-    List<Schedules> getSchedule(Integer filmCode);
+    Schedules addSchedule (Schedules schedules);
 
-    List<Seats> getStudioSeatStatus();
+    Schedules getScheduleDate();
 
-    Seats addSeat (Seats seats);
+    Seats getSeatStudio();
+
+    public List<Seats> getStudioSeatStatus();
 
     void updateStatus (String seatNumber, String studioName, String statusUpdated);
 }

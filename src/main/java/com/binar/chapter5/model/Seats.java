@@ -25,7 +25,7 @@ public class Seats {
 //    private Integer seatsId;
 
     @Column(name = "seat_number")
-    private Integer seatNumber;
+    private String seatNumber;
 
     @Column(name = "studio_name")
     private String studioName;

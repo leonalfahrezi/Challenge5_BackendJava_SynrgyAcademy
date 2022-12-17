@@ -8,12 +8,12 @@ import java.util.List;
 @Service
 public interface UsersService {
 
-    List<Users> getUsers();
+    Users getUser();
 
-    Users addUser (Users users);
+    Users addUser (Users id);
 
-    Users updateUser (String username, Users users);
+    void updateUser (Users users);
 
-    boolean deleteUser (String username);
+    boolean deleteUser (Integer id);
 
 }
